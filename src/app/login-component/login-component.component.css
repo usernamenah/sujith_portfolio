@@ -1,0 +1,193 @@
+
+
+#theportfolio{
+    /* width: 159rem;
+    height: 77rem; */
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    position: relative;
+}
+
+
+.nayokapoto{
+    border-radius: 20%;
+    width: 200px;
+    position: absolute;
+    left: 45%;
+}
+.row{
+    color: white;
+}
+.horizontalline{
+    position: relative;
+    height: 0.2PX;
+    width: 100%;
+    background-color: white;
+}
+.kanpadakudadhu{
+    opacity: 0;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-box {
+    flex: 0 0 auto;
+    padding: 20px;
+    color:  #ccc;
+    text-align: center;
+    /* Font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
+     */
+     font-family: 'Papyrus', cursive;
+
+     animation: flicker 1.5s infinite alternate;
+
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+
+      text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px rgb(255, 255, 255),
+        0 0 80px rgb(255, 255, 255),
+        0 0 90px rgb(255, 255, 255),
+        0 0 100px rgb(255, 255, 255),
+        0 0 150px rgb(255, 255, 255);
+
+    }
+
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+.bottom-container {
+    display: flex;
+    color:  #ccc;
+
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.box {
+    flex: 1 1 33.33%;
+    padding: 10px;
+    margin-right: 5px;
+    margin-top: 30px;
+    color:  #ccc;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    transform: scale(1);
+    -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+    -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 600px) {
+    .top-box,
+    .box {
+        flex: 1 1 100%; 
+    }
+}
+
+
+.maincontent{
+    position: fixed;
+    left: -60rem;
+    top: -3rem;
+    width: 140rem;
+    height: 70rem;
+}
+
+.vanish{
+    display: none;
+}
+.moveright{
+    right: 30rem;
+}
+.dupbut {
+    position: absolute;
+    left: 18rem;
+    z-index: 201;
+    top: 43rem;
+    animation: moveright 1.6s ease-in-out forwards;
+}
+
+@keyframes moveright {
+    0%{
+        left: 78rem;
+        transform: scale(1.2);
+        }
+        5%{
+            left: 78rem;
+            transform: scale(1.8);
+
+    }
+
+    100% {
+        left: 160rem;
+        display: none;
+        transform: scale(0.4);
+    }
+}
+
+.circleforcover{
+    position: fixed;
+    top: 35rem;
+    z-index: 800;
+    left: 93.5rem;
+    width: 100px;
+    height: 200px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 0px;
+    background-color: white;
+    transition: all 0.5s ease-in-out ;
+}
+.circleforcovermover{
+    position: fixed;
+    top: 35rem;
+    left: 93.5rem;
+    width: 100px;
+    height: 200px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 0px;
+    background-color: white;
+    animation: circlecovermove 1.5s ease-in-out 1s forwards ;
+
+}
+@keyframes circlecovermove {
+    0%{
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(60);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.logsupressinto{
+    transition: all 1s ease-in;
+    opacity: 0 ;
+    /* transform: scale(0); */
+}

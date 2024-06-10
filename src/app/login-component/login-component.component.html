@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>Document</title>
+    <style>
+        .loginbox1 {
+            position: fixed;
+            z-index: 10;
+            top: 6rem;
+            left: 0rem;
+            height: 40rem;
+            width: 40rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid white;
+            border-radius: 20px 20px 20px 20px;
+            transform: scale(1);
+            -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            /* animation: ukeatla 3s infinite; */
+            transform: scale(1.2);
+            transition: all 0.2s ease-in-out;
+            animation: paiki 3s ease-in-out 6s;
+
+        }
+
+        @keyframes paiki {
+            0% {
+                transform: scale(0) rotate(360deg);
+            }
+
+            50% {
+                transform: scale(0.9);
+            }
+
+            100% {
+                transform: scale(1.2);
+            }
+        }
+
+        .loginbox1:hover {
+
+            transform: scale(1.3);
+
+        }
+
+        .inpbox {
+            position: absolute;
+            left: 5rem;
+            top: 8rem;
+            width: 20rem;
+            outline: none;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid whitesmoke;
+            color: white;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .inpbox1 {
+            position: absolute;
+            left: 5rem;
+            top: 14rem;
+            width: 20rem;
+            outline: none;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid whitesmoke;
+            color: white;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .inpbox2 {
+            position: absolute;
+            left: 5rem;
+            top: 20rem;
+            width: 20rem;
+            outline: none;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid whitesmoke;
+            color: white;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .inpbox::placeholder {
+            color: rgba(255, 255, 255, 0.447);
+
+        }
+
+        .inpbox1::placeholder {
+            color: rgba(255, 255, 255, 0.447);
+        }
+
+        .inpbox1:focus {
+
+            border-bottom: 3px solid whitesmoke;
+            width: 31rem;
+        }
+
+        .inpbox:focus {
+            border-bottom: 3px solid whitesmoke;
+            width: 30.7rem;
+
+        }
+
+        .inpbox2:focus {
+            border-bottom: 3px solid whitesmoke;
+            width: 32rem;
+
+        }
+
+
+
+
+        .bb {
+            position: fixed;
+            z-index: 200;
+            left: -30rem;
+            top: -5rem;
+            height: 81rem;
+            width: 95rem;
+            /* width: 88rem; */
+            background-color: #3E115C;
+
+
+
+        }
+
+        /* .box11{
+            position: absolute;
+            z-index: 202;
+            left: -40rem;
+            top: -4rem;
+            height: 60rem;
+            width: 70rem;
+            background-color: #58115C;
+
+            
+        } */
+        /* .box12{
+            position: fixed;
+            z-index: 201;
+            left: 10rem;
+            top:-4rem;
+            height: 11rem;
+            width: 210rem;
+            background-color: #32115C;
+
+        } */
+        .papyrus-text {
+            position: absolute;
+
+            font-family: 'Papyrus', sans-serif;
+            color: #ffffff;
+            line-height: 1.5;
+
+
+        }
+
+        @keyframes flicker {
+
+            0%,
+            18%,
+            22%,
+            25%,
+            53%,
+            57%,
+            100% {
+
+                text-shadow:
+                    0 0 4px #fff,
+                    0 0 11px #fff,
+                    0 0 19px #fff,
+                    0 0 40px rgb(255, 255, 255),
+                    0 0 80px rgb(255, 255, 255),
+                    0 0 90px rgb(255, 255, 255),
+                    0 0 100px rgb(255, 255, 255),
+                    0 0 150px rgb(255, 255, 255);
+
+            }
+
+            20%,
+            24%,
+            55% {
+                text-shadow: none;
+            }
+        }
+
+
+        #loading-percentage {
+            position: fixed;
+            left: 10rem;
+            top: 30rem;
+            filter: brightness(90%);
+            animation: flicker 1.5s infinite alternate;
+            color: #fff;
+
+        }
+
+        .letter-l {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 5s infinite;
+        }
+
+        .letter-o {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 6s infinite;
+        }
+
+        .letter-a {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 5s infinite;
+        }
+
+        .letter-d {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 6s infinite;
+        }
+
+        .letter-i {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 5s infinite;
+        }
+
+        .letter-n {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 6s infinite;
+        }
+
+        .letter-g {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 5s infinite;
+        }
+
+        .letter-dot1 {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 6s infinite;
+        }
+
+        .letter-dot2 {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 5s infinite;
+        }
+
+        .letter-dot3 {
+            font-family: 'Copperplate', 'Papyrus', fantasy;
+
+            animation: ukeatla 6s infinite;
+        }
+
+        @keyframes ukeatla {
+            0% {
+                transform: translateY(3rem);
+            }
+
+            10% {
+                transform: translateY(0rem);
+            }
+
+            20% {
+                transform: translateY(3rem);
+            }
+
+            30% {
+                transform: translateY(0rem);
+            }
+
+            40% {
+                transform: translateY(3rem);
+            }
+
+            50% {
+                transform: translateY(0rem);
+            }
+
+            60% {
+                transform: translateY(3rem);
+            }
+
+            70% {
+                transform: translateY(0rem);
+            }
+
+            80% {
+                transform: translateY(3rem);
+            }
+
+            180% {
+                transform: translateY(0rem);
+            }
+
+            100% {
+                transform: translateY(3rem);
+            }
+
+        }
+
+        .container-fluid-11 {
+            position: fixed;
+            top: 10rem;
+            left: 20rem;
+            width: 60rem;
+        }
+
+        .whitebox1 {
+            position: fixed;
+            left: -50rem;
+            top: 60rem;
+            width: 0rem;
+            height: 5rem;
+            background-color: rgb(255, 255, 255);
+            border: 2px solid white;
+            border-radius: 20px 20px 20px 20px;
+            transform: scale(1);
+            -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+            animation: perugu 7s ease-in-out;
+        }
+
+        @keyframes perugu {
+            0% {
+                width: 0rem;
+            }
+
+            100% {
+                width: 140rem;
+            }
+
+        }
+
+        .inputname {
+            position: fixed;
+            left: 27rem;
+            top: 8rem;
+        }
+
+        .inputemail {
+            position: fixed;
+            left: 27rem;
+            top: 14rem;
+        }
+
+        .inputnum {
+            position: fixed;
+            left: 27rem;
+            top: 20rem;
+        }
+
+        /* body{
+ background:$background-color; 
+  width:100%;
+  height:100%;
+} */
+        .loading {
+            text-transform: uppercase;
+            font-family: 'Cabin Condensed', sans-serif;
+            font-weight: bold;
+            font-size: 100pt;
+            text-align: center;
+            height: 120px;
+            line-height: 110px;
+            vertical-align: bottom;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100px;
+            bottom: 0;
+            display: block;
+        }
+
+        .loading-2 {
+            top: 300px;
+            width: 473px;
+            height: 97px;
+            font-size: 0;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 0 auto;
+        }
+
+        .ff {
+            position: absolute;
+            font-size: 12pt;
+            top: -20px;
+            color: white;
+            line-height: 12pt;
+
+        }
+
+        .loading-2-text {
+            background-image: url('http://i66.tinypic.com/1jxje9.png');
+            width: 473px;
+            height: 97px;
+            display: inline-block;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                background-position: 0 bottom
+            }
+
+            ;
+
+            100% {
+                background-position: 200px bottom
+            }
+
+            ;
+        }
+
+        @keyframes loading-animation {
+            0% {
+                background-size: 200px 0px
+            }
+
+            ;
+
+            100% {
+                background-size: 200px 200px
+            }
+
+            ;
+        }
+
+        .wave {
+            background-image: url('http://i66.tinypic.com/optxd3.png');
+            @include background-clip(text);
+            color: rgba(255, 255, 255, 0);
+            text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
+            animation: wave-animation 1s infinite linear, loading-animation 10s infinite linear alternate;
+            background-size: 200px 100px;
+            background-repeat: repeat-x;
+            opacity: 1;
+        }
+
+        .wave-2 {
+            @include background-clip(initial);
+            display: inline-block;
+        }
+
+        body {
+            transform: scale(0.5);
+        }
+
+        .loadingcontent {
+            position: fixed;
+
+        }
+
+        #mainloginbutton {
+            cursor: pointer;
+            position: fixed;
+            left: 18rem;
+            z-index: 201;
+
+            top: 30rem;
+            transform: scale(1);
+            transition: right 4s ease-in-out;
+            transition: all 0.2s ease-in-out;
+
+        }
+        
+
+        #mainloginbutton:hover {
+
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div *ngIf="isloading==0">
+
+        <div id="loadingcontent">
+
+
+
+
+            <div class="bb" style="color: rgb(255, 255, 255); font-size: 400px;">
+                <!-- <div class="papyrus-text" style="color: #ffffff;">
+                    anaewrvetvrce
+                </div> -->
+                <div id="loading-percentage" style="font-family: Georgia, serif; font-size: 130px; color: #ffffff;">
+                    {{percentagecount}}%</div>
+                <div class="whitebox1"></div>
+
+
+
+
+
+                <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet'
+                    type='text/css'>
+
+                <div class="loading wave">
+                    L o a d i n g
+
+                    <!-- <div class="container-fluid-11">
+
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-1"></div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-l">L</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-o">o</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-a">a</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-d">d</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-i">i</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-n">n</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-g">g</div>
+            </div>
+        </div>
+
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-dot1">.</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-dot2">.</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="display-4">
+                <div class="letter-dot3">!</div>
+            </div>
+        </div>
+
+    </div>
+</div> -->
+                </div>
+
+                <!-- For Firefox -->
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div *ngif="!isloading==1"></div>
+    <div id="content" [class.logsupressinto]="startani">
+
+        <div class="restconetent">
+
+
+            <div class="loginbox1"  >
+                <input type="text" class="inpbox">
+                <h5>
+
+                    <div class="inputname" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
+                        enter your name</div>
+                </h5>
+                <input type="text" class="inpbox1">
+                <h5>
+
+                    <div class="inputemail" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
+                        enter your E-mail</div>
+                </h5>
+                <input type="text" class="inpbox2">
+                <h5>
+
+                    <div class="inputnum" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
+                        enter your purpose</div>
+                </h5>
+                <br><br><br>
+                <div (click)="toggleDiv()" [class.vanish]="startani" id="mainloginbutton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white"
+                        class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                    </svg>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="circleforcover">
+
+    </div>
+    <div class="circleforcovermover"  *ngIf="isDiv2Visible" >
+
+    </div>
+    
+    <div class="maincontent">
+        <div  class="dupbut" *ngIf="startani"  id="mainloginbuttondup">
+                <svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" fill="white"
+                    class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                </svg>
+            </div>
+        <div *ngIf="ismainVisible" id="theportfolio">
+            <div class="container-fluid">
+                <div class="row">
+            
+                    <div class="myimageforportfolio">
+                        <img src="https://lh7-us.googleusercontent.com/chat_attachment/AP1Ws4uvNvMtcm38Z-LChWALhzr02vsvQPKFpl1wpbjpVt2va9fd7XlSe6yms9t2YNGuvOD4VF4NvgLbNIA5sNpsYgzF-oIWG3HzUdBj2ZOIX0CBewWmupNVSVePE3XuYyLeyRaSIEUnKN8xCV6LvPWAAPIN_U_R5eMgq3sNhFXUaDbrwhvIXNAJxR9VbfuNg7icn3g_I9GUizj58jMSxiCCpEJMElNnXmKExT3H7e64Avb5bZz7O_3NEfV7CKlla8ehOTqWizQznI6uuMbcrWjaJyUBI4ZTjPKFnSuB-_RyuP3L1QQi6VH-glZBu8fWTD44INgjHvg=w1920-h896" alt="PROFILE PHOTO" class="nayokapoto">
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="container">
+                    <div class="top-box">
+                            <h1 class="display-3">S U J I T H . P</h1>
+                        </div>
+                    <div class="bottom-container">
+                        <div class="box">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="row-5">
+                                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" xml:space="preserve"
+                                            width="30px" height="30px">
+                                            <style type="text/css">
+                                                .st0 {
+                                                    fill: #4a4a4a;
+                                                }
+            
+                                                .st1 {
+                                                    fill: #f0f0f0;
+                                                }
+                                            </style>
+                                            <g>
+                                                <path class="st0"
+                                                    d="M0,8v48c0,4.4,3.6,8,8,8h48c4.4,0,8-3.6,8-8V8c0-4.4-3.6-8-8-8H8C3.6,0,0,3.6,0,8z M8,4h48c2.2,0,4,1.8,4,4 v2.7L32,32.6L4,10.7V8C4,5.8,5.8,4,8,4z M60,56c0,2.2-1.8,4-4,4H8c-2.2,0-4-1.8-4-4V13.4l28,21.3c0.5,0.4,1.2,0.6,1.9,0.6 c0.7,0,1.4-0.2,1.9-0.6L60,13.4V56z" />
+                                                <polygon class="st1" points="4,10.7 32,32.6 60,10.7 32,4 " />
+                                                <polygon class="st1" points="4,13.4 32,34.7 60,13.4 60,56 4,56 " />
+                                            </g>
+                                        </svg>
+            
+                                    </div>
+                                    <div class="row-7">
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+                        </div>
+                        <div class="box">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="row-5">
+                                        <svg
+              version="1.1"
+              id="Layer_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 1024 1024"
+              xml:space="preserve"
+              width="30px"
+              height="30px"
+            >
+              <path
+                fill="white"
+                d="M512 0C229.230 0 0 229.230 0 512C0 737.488 146.630 933.008 349.115 996.097C374.379 1000.007 384.619 984.305 384.619 970.493C384.619 958.306 384.145 917.608 384.145 873.233C256.238 896.099 224.338 822.899 224.338 822.899C204.691 775.561 176.129 763.248 176.129 763.248C132.148 735.221 177.607 735.768 177.607 735.768C225.429 739.657 248.542 784.474 248.542 784.474C289.324 851.110 356.762 831.579 384.820 820.233C388.819 792.225 400.101 772.118 412.813 761.753C300.391 751.343 182.804 705.255 182.804 501.077C182.804 439.804 204.439 386.689 240.424 346.341C234.505 331.968 216.378 279.503 246.826 209.660C246.826 209.660 294.196 195.586 380.110 258.229C423.651 245.349 471.464 238.325 512.004 238.086C552.535 238.325 600.368 245.349 643.928 258.229C729.822 195.586 777.153 209.660 777.153 209.660C807.641 279.503 789.515 331.968 783.595 346.341C819.600 386.689 841.195 439.804 841.195 501.077C841.195 705.405 723.555 751.243 611.003 761.093C628.835 775.896 645.019 807.750 645.019 855.655C645.019 919.537 644.545 953.720 644.545 970.493C644.545 984.335 654.687 1000.100 679.119 996.046C881.613 933.008 1024 737.488 1024 512C1024 229.230 794.770 0 512 0Z"
+              />
+            </svg>
+            
+            
+                                    </div>
+                                    <div class="row-7">
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+                        </div>
+                        <div class="box">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="row-5">
+                                        <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              viewBox="0 0 24 24" 
+              width="30px" 
+              height="30px" 
+              fill="white">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M6.62 10.79C8.06 13.4 10.6 15.94 13.21 17.38l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.3 2.33.47 3.57.47.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.04 21 3 13.96 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.17 2.45.47 3.57.1.35.01.74-.26 1.02l-2.2 2.2z"/>
+            </svg>
+            
+            
+                                    </div>
+                                    <div class="row-7">
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="horizontalline"></div>
+            
+            
+            </div>
+        </div>
+    </div>
+
+</body>
+
+
+</html>
