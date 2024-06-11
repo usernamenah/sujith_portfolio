@@ -2,9 +2,6 @@
     "version": 2,
     "builds": [
       { "src": "angular.json", "use": "@vercel/static-build" }
-    ],
-    "scripts": {
-    "build": "ng build"
-  }
+    ]
 
   }

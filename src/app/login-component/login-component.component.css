@@ -1,33 +1,35 @@
-
-
-#theportfolio{
+#theportfolio {
     /* width: 159rem;
     height: 77rem; */
-    width: 100%;
+    width: 160rem;
     height: 100%;
     /* background-color: red; */
     position: relative;
 }
 
 
-.nayokapoto{
+.nayokapoto {
     border-radius: 20%;
     width: 200px;
     position: absolute;
     left: 45%;
 }
-.row{
+
+.row {
     color: white;
 }
-.horizontalline{
+
+.horizontalline {
     position: relative;
     height: 0.2PX;
     width: 100%;
     background-color: white;
 }
-.kanpadakudadhu{
+
+.kanpadakudadhu {
     opacity: 0;
 }
+
 .container {
     display: flex;
     flex-direction: column;
@@ -36,13 +38,13 @@
 .top-box {
     flex: 0 0 auto;
     padding: 20px;
-    color:  #ccc;
+    color: #ccc;
     text-align: center;
     /* Font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif;
      */
-     font-family: 'Papyrus', cursive;
+    font-family: 'Papyrus', cursive;
 
-     animation: flicker 1.5s infinite alternate;
+    animation: flicker 1.5s infinite alternate;
 
 }
 
@@ -56,27 +58,28 @@
     57%,
     100% {
 
-      text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px rgb(255, 255, 255),
-        0 0 80px rgb(255, 255, 255),
-        0 0 90px rgb(255, 255, 255),
-        0 0 100px rgb(255, 255, 255),
-        0 0 150px rgb(255, 255, 255);
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px rgb(255, 255, 255),
+            0 0 80px rgb(255, 255, 255),
+            0 0 90px rgb(255, 255, 255),
+            0 0 100px rgb(255, 255, 255),
+            0 0 150px rgb(255, 255, 255);
 
     }
 
     20%,
     24%,
     55% {
-      text-shadow: none;
+        text-shadow: none;
     }
-  }
+}
+
 .bottom-container {
     display: flex;
-    color:  #ccc;
+    color: #ccc;
 
     flex: 1;
     flex-wrap: wrap;
@@ -85,9 +88,9 @@
 .box {
     flex: 1 1 33.33%;
     padding: 10px;
-    margin-right: 5px;
+    margin-right: 15px;
     margin-top: 30px;
-    color:  #ccc;
+    color: #ccc;
     text-align: center;
     background: rgba(255, 255, 255, 0.15);
     border: 2px solid white;
@@ -96,17 +99,24 @@
     -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
     -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.box:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 600px) {
+
     .top-box,
     .box {
-        flex: 1 1 100%; 
+        flex: 1 1 100%;
     }
 }
 
 
-.maincontent{
+.maincontent {
     position: fixed;
     left: -60rem;
     top: -3rem;
@@ -114,12 +124,14 @@
     height: 70rem;
 }
 
-.vanish{
+.vanish {
     display: none;
 }
-.moveright{
+
+.moveright {
     right: 30rem;
 }
+
 .dupbut {
     position: absolute;
     left: 18rem;
@@ -129,13 +141,14 @@
 }
 
 @keyframes moveright {
-    0%{
+    0% {
         left: 78rem;
         transform: scale(1.2);
-        }
-        5%{
-            left: 78rem;
-            transform: scale(1.8);
+    }
+
+    5% {
+        left: 78rem;
+        transform: scale(1.8);
 
     }
 
@@ -146,7 +159,7 @@
     }
 }
 
-.circleforcover{
+.circleforcover {
     position: fixed;
     top: 35rem;
     z-index: 800;
@@ -158,9 +171,10 @@
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 0px;
     background-color: white;
-    transition: all 0.5s ease-in-out ;
+    transition: all 0.5s ease-in-out;
 }
-.circleforcovermover{
+
+.circleforcovermover {
     position: fixed;
     top: 35rem;
     left: 93.5rem;
@@ -171,23 +185,53 @@
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 0px;
     background-color: white;
-    animation: circlecovermove 1.5s ease-in-out 1s forwards ;
+    animation: circlecovermove 1.5s ease-in-out 1s forwards;
 
 }
+
 @keyframes circlecovermove {
-    0%{
+    0% {
         transform: scale(1);
     }
 
     50% {
         transform: scale(60);
     }
+
     100% {
         transform: scale(1);
     }
 }
-.logsupressinto{
+
+.logsupressinto {
     transition: all 1s ease-in;
-    opacity: 0 ;
+    opacity: 0;
     /* transform: scale(0); */
+}
+
+
+
+
+.boxesdhitotest {
+    margin-top: 70px;
+    margin-left: 400px;
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    animation: appear 5s linear;
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+
+    }
+
+    tp {
+        opacity: 1;
+        transform: scale(1);
+    }
+
 }
