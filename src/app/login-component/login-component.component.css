@@ -1,7 +1,7 @@
 #theportfolio {
     /* width: 159rem;
     height: 77rem; */
-    width: 160rem;
+    width: 99rem;
     height: 100%;
     /* background-color: red; */
     position: relative;
@@ -163,7 +163,7 @@
     position: fixed;
     top: 35rem;
     z-index: 800;
-    left: 93.5rem;
+    left: 91.5rem;
     width: 100px;
     height: 200px;
     border-top-left-radius: 100px;
@@ -177,11 +177,11 @@
 .circleforcovermover {
     position: fixed;
     top: 35rem;
-    left: 93.5rem;
+    left: 91.5rem;
     width: 100px;
     height: 200px;
     border-top-left-radius: 100px;
-    border-top-right-radius: 0px;
+    border-top-right-radius: 5px;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 0px;
     background-color: white;
@@ -727,10 +727,18 @@ body {
 #all-chat{
     color: lavender;
     font-size: 20px;
+    width: 150rem;
+    height: 44rem;
+    overflow-y: auto; 
+    overflow-x: hidden;
 }
 .acthiddenbro{
     opacity: 0;
     color: transparent;
 
     cursor: none;
+}
+
+#all-chat::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
 }
