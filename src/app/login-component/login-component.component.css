@@ -713,3 +713,15 @@ body {
 
     transform: scale(1.2);
 }
+.myimageforportfolio{
+    position: relative;
+    border-radius: 60%;
+    width: 200px;
+    height: 200px;
+    left: 43%;
+
+}
+#all-chat{
+    color: lavender;
+    font-size: 20px;
+}
