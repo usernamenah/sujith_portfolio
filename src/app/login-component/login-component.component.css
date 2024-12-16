@@ -173,7 +173,11 @@
     background-color: white;
     transition: all 0.5s ease-in-out;
 }
+.circleforcover:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 
+}
 .circleforcovermover {
     position: fixed;
     top: 35rem;
@@ -741,4 +745,33 @@ body {
 
 #all-chat::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Edge */
+}
+
+.slow-glow-divs{
+    font-family: 'Papyrus', cursive;
+    /* animation: slowGlow 5s infinite alternate; */
+    animation: slowGlow 5s infinite ease-in-out;
+}
+
+@keyframes slowGlow {
+    0%{
+        text-shadow: 
+            0 0 5px #fff, 
+            0 0 10px #fff, 
+            0 0 20px #fff, 
+            0 0 40px rgb(255, 255, 255),
+            0 0 80px rgb(255, 255, 255),
+            0 0 100px rgb(255, 255, 255),
+            0 0 150px rgb(255, 255, 255);
+    }
+    100% {
+        text-shadow: 
+            0 0 1px #fff, 
+            0 0 2px #fff, 
+            0 0 5px #fff, 
+            0 0 10px rgb(255, 255, 255),
+            0 0 20px rgb(255, 255, 255),
+            0 0 30px rgb(255, 255, 255),
+            0 0 40px rgb(255, 255, 255);
+    }
 }

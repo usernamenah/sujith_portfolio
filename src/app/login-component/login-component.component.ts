@@ -61,6 +61,17 @@ export class LoginComponentComponent implements OnInit, OnDestroy {
       this.ismainVisible = !this.ismainVisible;
     }, 2000);
   }
+  justExpand(): void {
+    
+    setTimeout(() => {
+      this.isDiv2Visible = !this.isDiv2Visible;
+    }, 10);
+   
+    this.isDiv2Visible = !this.isDiv2Visible;
+    
+  }
+
+
 }
 
 // import { Component } from '@angular/core';
