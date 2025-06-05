@@ -5,855 +5,273 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
-    <title>Document</title>
-    <style>
-        .loginbox1 {
-            position: fixed;
-            z-index: 10;
-            top: 6rem;
-            left: 0rem;
-            height: 40rem;
-            width: 40rem;
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid white;
-            border-radius: 20px 20px 20px 20px;
-            transform: scale(1);
-            -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            /* animation: ukeatla 3s infinite; */
-            transform: scale(1.2);
-            transition: all 0.2s ease-in-out;
-            animation: paiki 3s ease-in-out 6s;
-
-        }
-
-        @keyframes paiki {
-            0% {
-                transform: scale(0) rotate(360deg);
-            }
-
-            50% {
-                transform: scale(0.9);
-            }
-
-            100% {
-                transform: scale(1.2);
-            }
-        }
-
-        .loginbox1:hover {
-
-            transform: scale(1.3);
-
-        }
-
-        .inpbox {
-            position: absolute;
-            left: 5rem;
-            top: 8rem;
-            width: 20rem;
-            outline: none;
-            background: none;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: 1px solid whitesmoke;
-            color: white;
-            transition: all 0.4s ease-in-out;
-        }
-
-        .inpbox1 {
-            position: absolute;
-            left: 5rem;
-            top: 14rem;
-            width: 20rem;
-            outline: none;
-            background: none;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: 1px solid whitesmoke;
-            color: white;
-            transition: all 0.4s ease-in-out;
-        }
-
-        .inpbox2 {
-            position: absolute;
-            left: 5rem;
-            top: 20rem;
-            width: 20rem;
-            outline: none;
-            background: none;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-bottom: 1px solid whitesmoke;
-            color: white;
-            transition: all 0.4s ease-in-out;
-        }
-
-        .inpbox::placeholder {
-            color: rgba(255, 255, 255, 0.447);
-
-        }
-
-        .inpbox1::placeholder {
-            color: rgba(255, 255, 255, 0.447);
-        }
-
-        .inpbox1:focus {
-
-            border-bottom: 3px solid whitesmoke;
-            width: 31rem;
-        }
-
-        .inpbox:focus {
-            border-bottom: 3px solid whitesmoke;
-            width: 30.7rem;
-
-        }
-
-        .inpbox2:focus {
-            border-bottom: 3px solid whitesmoke;
-            width: 32rem;
-
-        }
-
-
-
-
-        .bb {
-            position: fixed;
-            z-index: 200;
-            left: -30rem;
-            top: -5rem;
-            height: 81rem;
-            width: 95rem;
-            /* width: 88rem; */
-            background-color: #3E115C;
-
-
-
-        }
-
-        /* .box11{
-            position: absolute;
-            z-index: 202;
-            left: -40rem;
-            top: -4rem;
-            height: 60rem;
-            width: 70rem;
-            background-color: #58115C;
-
-            
-        } */
-        /* .box12{
-            position: fixed;
-            z-index: 201;
-            left: 10rem;
-            top:-4rem;
-            height: 11rem;
-            width: 210rem;
-            background-color: #32115C;
-
-        } */
-        .papyrus-text {
-            position: absolute;
-
-            font-family: 'Papyrus', sans-serif;
-            color: #ffffff;
-            line-height: 1.5;
-
-
-        }
-
-        @keyframes flicker {
-
-            0%,
-            18%,
-            22%,
-            25%,
-            53%,
-            57%,
-            100% {
-
-                text-shadow:
-                    0 0 4px #fff,
-                    0 0 11px #fff,
-                    0 0 19px #fff,
-                    0 0 40px rgb(255, 255, 255),
-                    0 0 80px rgb(255, 255, 255),
-                    0 0 90px rgb(255, 255, 255),
-                    0 0 100px rgb(255, 255, 255),
-                    0 0 150px rgb(255, 255, 255);
-
-            }
-
-            20%,
-            24%,
-            55% {
-                text-shadow: none;
-            }
-        }
-
-
-        #loading-percentage {
-            position: fixed;
-            left: 10rem;
-            top: 30rem;
-            filter: brightness(90%);
-            animation: flicker 1.5s infinite alternate;
-            color: #fff;
-
-        }
-
-        .letter-l {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 5s infinite;
-        }
-
-        .letter-o {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 6s infinite;
-        }
-
-        .letter-a {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 5s infinite;
-        }
-
-        .letter-d {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 6s infinite;
-        }
-
-        .letter-i {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 5s infinite;
-        }
-
-        .letter-n {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 6s infinite;
-        }
-
-        .letter-g {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 5s infinite;
-        }
-
-        .letter-dot1 {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 6s infinite;
-        }
-
-        .letter-dot2 {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 5s infinite;
-        }
-
-        .letter-dot3 {
-            font-family: 'Copperplate', 'Papyrus', fantasy;
-
-            animation: ukeatla 6s infinite;
-        }
-
-        @keyframes ukeatla {
-            0% {
-                transform: translateY(3rem);
-            }
-
-            10% {
-                transform: translateY(0rem);
-            }
-
-            20% {
-                transform: translateY(3rem);
-            }
-
-            30% {
-                transform: translateY(0rem);
-            }
-
-            40% {
-                transform: translateY(3rem);
-            }
-
-            50% {
-                transform: translateY(0rem);
-            }
-
-            60% {
-                transform: translateY(3rem);
-            }
-
-            70% {
-                transform: translateY(0rem);
-            }
-
-            80% {
-                transform: translateY(3rem);
-            }
-
-            180% {
-                transform: translateY(0rem);
-            }
-
-            100% {
-                transform: translateY(3rem);
-            }
-
-        }
-
-        .container-fluid-11 {
-            position: fixed;
-            top: 10rem;
-            left: 20rem;
-            width: 60rem;
-        }
-
-        .whitebox1 {
-            position: fixed;
-            left: -50rem;
-            top: 60rem;
-            width: 0rem;
-            height: 5rem;
-            background-color: rgb(255, 255, 255);
-            border: 2px solid white;
-            border-radius: 20px 20px 20px 20px;
-            transform: scale(1);
-            -webkit-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            -moz-box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            box-shadow: 0px 0px 20px 1px rgba(255, 255, 255, 0.9);
-            animation: perugu 7s ease-in-out;
-        }
-
-        @keyframes perugu {
-            0% {
-                width: 0rem;
-            }
-
-            100% {
-                width: 140rem;
-            }
-
-        }
-
-        .inputname {
-            position: fixed;
-            left: 27rem;
-            top: 8rem;
-        }
-
-        .inputemail {
-            position: fixed;
-            left: 27rem;
-            top: 14rem;
-        }
-
-        .inputnum {
-            position: fixed;
-            left: 27rem;
-            top: 20rem;
-        }
-
-        /* body{
- background:$background-color; 
-  width:100%;
-  height:100%;
-} */
-        .loading {
-            text-transform: uppercase;
-            font-family: 'Cabin Condensed', sans-serif;
-            font-weight: bold;
-            font-size: 100pt;
-            text-align: center;
-            height: 120px;
-            line-height: 110px;
-            vertical-align: bottom;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 100px;
-            bottom: 0;
-            display: block;
-        }
-
-        .loading-2 {
-            top: 300px;
-            width: 473px;
-            height: 97px;
-            font-size: 0;
-            background: rgba(255, 255, 255, 0.06);
-            margin: 0 auto;
-        }
-
-        .ff {
-            position: absolute;
-            font-size: 12pt;
-            top: -20px;
-            color: white;
-            line-height: 12pt;
-
-        }
-
-        .loading-2-text {
-            background-image: url('http://i66.tinypic.com/1jxje9.png');
-            width: 473px;
-            height: 97px;
-            display: inline-block;
-        }
-
-        @keyframes wave-animation {
-            0% {
-                background-position: 0 bottom
-            }
-
-            ;
-
-            100% {
-                background-position: 200px bottom
-            }
-
-            ;
-        }
-
-        @keyframes loading-animation {
-            0% {
-                background-size: 200px 0px
-            }
-
-            ;
-
-            100% {
-                background-size: 200px 200px
-            }
-
-            ;
-        }
-
-        .wave {
-            background-image: url('http://i66.tinypic.com/optxd3.png');
-            @include background-clip(text);
-            color: rgba(255, 255, 255, 0);
-            text-shadow: 0px 0px rgba(255, 255, 255, 0.06);
-            animation: wave-animation 1s infinite linear, loading-animation 10s infinite linear alternate;
-            background-size: 200px 100px;
-            background-repeat: repeat-x;
-            opacity: 1;
-        }
-
-        .wave-2 {
-            @include background-clip(initial);
-            display: inline-block;
-        }
-
-        body {
-            transform: scale(0.5);
-        }
-
-        .loadingcontent {
-            position: fixed;
-
-        }
-
-        #mainloginbutton {
-            cursor: pointer;
-            position: fixed;
-            left: 18rem;
-            z-index: 201;
-
-            top: 30rem;
-            transform: scale(1);
-            transition: right 4s ease-in-out;
-            transition: all 0.2s ease-in-out;
-
-        }
-
-
-        #mainloginbutton:hover {
-
-            transform: scale(1.2);
-        }
-    </style>
+    <!-- Using a more versatile font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Condensed:700" rel="stylesheet" type="text/css">
+    <title>Sujith Pappala - Portfolio</title>
+    <link rel="stylesheet" href="login-component.component.css"> <!-- Link to your external CSS -->
 </head>
 
 <body>
-    <div *ngIf="isloading==0">
-
+    <!-- Angular-like directive, assuming isloading=0 initially -->
+    <div id="loading-wrapper" class="loading-active">
         <div id="loadingcontent">
-
-
-
-
-            <div class="bb" style="color: rgb(255, 255, 255); font-size: 400px;">
-                <!-- <div class="papyrus-text" style="color: #ffffff;">
-                    anaewrvetvrce
-                </div> -->
-                <div id="loading-percentage" style="font-family: Georgia, serif; font-size: 130px; color: #ffffff;">
-                    {{percentagecount}}%</div>
+            <div class="bb">
+                <div id="loading-percentage" style="font-family: 'Poppins', sans-serif;">{{percentagecount}}%</div>
                 <div class="whitebox1"></div>
-
-
-
-
-
-                <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet'
-                    type='text/css'>
-
                 <div class="loading wave">
                     L o a d i n g
-
-                    <!-- <div class="container-fluid-11">
-
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-1"></div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-l">L</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-o">o</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-a">a</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-d">d</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-i">i</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-n">n</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-g">g</div>
-            </div>
-        </div>
-
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-dot1">.</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-dot2">.</div>
-            </div>
-        </div>
-        <div class="col-1">
-            <div class="display-4">
-                <div class="letter-dot3">!</div>
-            </div>
-        </div>
-
-    </div>
-</div> -->
                 </div>
-
-                <!-- For Firefox -->
-
             </div>
         </div>
-
-
     </div>
 
-    <div *ngif="!isloading==1"></div>
-    <div id="content" [class.logsupressinto]="startani">
-
-        <div class="restconetent">
-
-
+    <!-- This div would be shown when loading is done -->
+    <div id="page-content" class="hidden">
+        <!-- Initial Form Section -->
+        <div id="initial-form-container" class="content-section active">
             <div class="loginbox1">
-                <input type="text" class="inpbox">
-                <h5>
-
-                    <div class="inputname" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
-                        enter your name</div>
-                </h5>
-                <input type="text" class="inpbox1">
-                <h5>
-
-                    <div class="inputemail" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
-                        enter your E-mail</div>
-                </h5>
-                <input type="text" class="inpbox2">
-                <h5>
-
-                    <div class="inputnum" style="font-family: Jazz LET, fantasy; color: rgba(255, 255, 255, 0.509);">
-                        enter your purpose</div>
-                </h5>
+                <h2 class="form-title">Get in Touch</h2>
+                <input type="text" class="inpbox" placeholder="Enter your name">
+                <input type="email" class="inpbox1" placeholder="Enter your E-mail">
+                <input type="text" class="inpbox2" placeholder="Purpose of contact">
                 <br><br><br>
-                <div (click)="toggleDiv()" [class.vanish]="startani" id="mainloginbutton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="white"
+                <div id="mainloginbutton" (click)="toggleDiv()" title="Proceed to Portfolio">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor"
                         class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
                         <path
                             d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
                     </svg>
                 </div>
-
-
-
-
             </div>
         </div>
-    </div>
-    <div class="circleforcover" (click)="justExpand()">
 
-    </div>
-    <div class="circleforcovermover" *ngIf="isDiv2Visible">
+        <!-- Main Portfolio Content (Initially hidden by logic, shown after form interaction) -->
+        <div class="maincontent content-section" id="portfolio-section">
+            <!-- Duplicate button if needed by your Angular logic -->
+            <div class="dupbut" *ngIf="startani" id="mainloginbuttondup">
+                <svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" fill="white"
+                    class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
+                </svg>
+            </div>
 
-    </div>
-
-    <div class="maincontent">
-        <div class="dupbut" *ngIf="startani" id="mainloginbuttondup">
-            <svg xmlns="http://www.w3.org/2000/svg" width="73" height="73" fill="white"
-                class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
-                <path
-                    d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1" />
-            </svg>
-        </div>
-        <div *ngIf="ismainVisible" id="theportfolio">
-            <div class="container-fluid">
-                <div class="row">
-
+            <div id="theportfolio">
+                <div class="container-fluid portfolio-header">
                     <div class="myimageforportfoliopaina">
-                        <img src="https://i.postimg.cc/L5Gk6Pyw/1671089633103.jpg"
-                            class="myimageforportfolio"  alt="my profile pic">
+                        <img src="https://i.postimg.cc/L5Gk6Pyw/1671089633103.jpg" class="myimageforportfolio"
+                            alt="Pappala Sujith profile picture">
                     </div>
-                </div>
-                <br>
-                <br>
-                <br>
-                <div class="container">
                     <div class="top-box">
-                        <h1 class="display-3">S U J I T H . P</h1>
+                        <h1>Pappala Sujith</h1>
+                        <p class="subtitle">Full-Stack Developer | B.Tech Computer Science Student</p>
                     </div>
-                    <div class="bottom-container">
-                        <a href="https://github.com/usernamenah" style="text-decoration: none;" target="_blank">
-                            <div class="box">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="row-5">
-                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024"
-                                                xml:space="preserve" width="30px" height="30px">
-                                                <path fill="white"
-                                                    d="M512 0C229.230 0 0 229.230 0 512C0 737.488 146.630 933.008 349.115 996.097C374.379 1000.007 384.619 984.305 384.619 970.493C384.619 958.306 384.145 917.608 384.145 873.233C256.238 896.099 224.338 822.899 224.338 822.899C204.691 775.561 176.129 763.248 176.129 763.248C132.148 735.221 177.607 735.768 177.607 735.768C225.429 739.657 248.542 784.474 248.542 784.474C289.324 851.110 356.762 831.579 384.820 820.233C388.819 792.225 400.101 772.118 412.813 761.753C300.391 751.343 182.804 705.255 182.804 501.077C182.804 439.804 204.439 386.689 240.424 346.341C234.505 331.968 216.378 279.503 246.826 209.660C246.826 209.660 294.196 195.586 380.110 258.229C423.651 245.349 471.464 238.325 512.004 238.086C552.535 238.325 600.368 245.349 643.928 258.229C729.822 195.586 777.153 209.660 777.153 209.660C807.641 279.503 789.515 331.968 783.595 346.341C819.600 386.689 841.195 439.804 841.195 501.077C841.195 705.405 723.555 751.243 611.003 761.093C628.835 775.896 645.019 807.750 645.019 855.655C645.019 919.537 644.545 953.720 644.545 970.493C644.545 984.335 654.687 1000.100 679.119 996.046C881.613 933.008 1024 737.488 1024 512C1024 229.230 794.770 0 512 0Z" />
-                                            </svg> usernamenah
-
-
-                                        </div>
-                                        <div class="row-7">
-
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
+                    <div class="contact-links-container">
+                        <a href="https://linkedin.com/in/sujith-pappala-634529225/" class="contact-link" target="_blank" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <span>LinkedIn</span>
                         </a>
-                        <div class="acthiddenbro">
-
-                            <div class="box">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="row-5">
-                                            
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30px"
-                                            height="30px" fill="white">
-                                            <path d="M0 0h24v24H0z" fill="none" />
-                                            <path
-                                            d="M6.62 10.79C8.06 13.4 10.6 15.94 13.21 17.38l2.2-2.2c.27-.27.67-.36 1.02-.26 1.12.3 2.33.47 3.57.47.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.04 21 3 13.96 3 5c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.17 2.45.47 3.57.1.35.01.74-.26 1.02l-2.2 2.2z" />
-                                        </svg>
-                                        
-                                        
-                                        
-                                    </div>
-                                    <div class="row-7">
-
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
-                        <div class="box">
-                            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sujithpappala777@gmail.com&su=SUJITH_Portfolio_Website%20&body=Hii%20Sujith%20i%20want%20to%20contact%20you..!!%20Through..email.%0D%0A%0D%0ARegards,%0D%0AYour%20Name"
-                            style="text-decoration:none" target="_blank">
-                                <div class="container-fluid">
-                                    <div class="row">
-                                        <div class="row-5">
-                                            
-                                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"
-                                            xml:space="preserve" width="30px" height="30px">
-                                            <style type="text/css">
-                                                .st0 {
-                                                        fill: #4a4a4a;
-                                                    }
-                                                    
-                                                    .st1 {
-                                                        fill: #f0f0f0;
-                                                    }
-                                                </style>
-                                                <g>
-                                                    <path class="st0"
-                                                    d="M0,8v48c0,4.4,3.6,8,8,8h48c4.4,0,8-3.6,8-8V8c0-4.4-3.6-8-8-8H8C3.6,0,0,3.6,0,8z M8,4h48c2.2,0,4,1.8,4,4 v2.7L32,32.6L4,10.7V8C4,5.8,5.8,4,8,4z M60,56c0,2.2-1.8,4-4,4H8c-2.2,0-4-1.8-4-4V13.4l28,21.3c0.5,0.4,1.2,0.6,1.9,0.6 c0.7,0,1.4-0.2,1.9-0.6L60,13.4V56z" />
-                                                    <polygon class="st1" points="4,10.7 32,32.6 60,10.7 32,4 " />
-                                                    <polygon class="st1" points="4,13.4 32,34.7 60,13.4 60,56 4,56 " />
-                                                </g>
-                                            </svg>sujithpappala777&#64;gmail.com
-                                            
-                                            
-                                        </div>
-                                        <div class="row-7">
-                                            
-                                        </div>
-                                        
-                                    </div>
-                                    
-                                </div>
-                                
-                            </a>
-                        </div>
+                        <a href="https://github.com/usernamenah" class="contact-link" target="_blank" title="GitHub">
+                            <svg viewBox="0 0 16 16" width="24" height="24"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.07 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" fill="currentColor"></path></svg>
+                            <span>GitHub</span>
+                        </a>
+                         <a href="mailto:sujithpappala777@gmail.com" class="contact-link" target="_blank" title="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            <span>Email</span>
+                        </a>
+                        <a href="tel:+917207312164" class="contact-link" target="_blank" title="Phone">
+                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.01 21 3 13.99 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.23 1.02l-2.2 2.2z"/></svg>
+                           <span>Phone</span>
+                        </a>
+                        <a href="https://sujith-portfolio-ten.vercel.app/" class="contact-link" target="_blank" title="Personal Website">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            <span>Website</span>
+                        </a>
                     </div>
                 </div>
-                <br>
-                <br>
                 <div class="horizontalline"></div>
-                <div id="all-chat">
 
-                    <section id="education-chat">
-                        <div class="slow-glow-divs">
+                <div id="all-chat">
+                    <section id="introduction-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
+                            <h2>Introduction</h2>
+                        </div>
+                         <div class="card-chat">
+                            <p>Hi, I am a 4th year B.Tech Computer Science student with strong experience in full-stack development. I have a passion for building secure and efficient applications, integrating AI, and continually expanding my skillset. Fluent in English, Hindi, and Telugu, with excellent communication skills. Actively engaged in sports, music, content creation, and academic conferences.</p>
+                        </div>
+                    </section>
+
+                    <section id="education-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
                             <h2>Education</h2>
                         </div>
                         <div class="card-chat">
                             <h3>Keshav Memorial Institute of Technology</h3>
-                            <p>Bachelor of Technology in Computer Science (July 2021 – June 2025)</p>
-                            <p>GPA: 8/10</p>
-                            <p>Relevant Coursework: Operating Systems, Data Structures, Algorithms, Computer Networks
-                            </p>
+                            <p><strong>Degree:</strong> Bachelor of Technology in Computer Science</p>
+                            <p><em>July 2021 – June 2025</em></p>
+                            <p><strong>GPA:</strong> 8/10</p>
+                            <p><strong>Relevant Coursework:</strong> Operating Systems, Data Structures, Algorithms, Computer Networks</p>
                         </div>
                     </section>
 
-                    <section id="projects-chat">
-                        <div class="slow-glow-divs">
+                    <section id="certifications-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
+                            <h2>Certifications</h2>
+                        </div>
+                        <div class="card-chat">
+                            <ul>
+                                <li>Back End Development and APIs - freeCodeCamp</li>
+                                <li>Responsive Web Design - freeCodeCamp</li>
+                                <li>JavaScript Algorithms and Data Structures - freeCodeCamp</li>
+                                <li>Foundational C# with Microsoft - freeCodeCamp</li>
+                                <li>Front End Development Libraries - freeCodeCamp</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="projects-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
                             <h2>Projects</h2>
                         </div>
-                        <div class="card-chat">
-                            <h3>Interactive Website</h3>
-                            <p><strong>Description:</strong> Aadan Pradan: A portal website for students to book labs at
-                                the nearest available colleges.</p>
-                            <p><strong>Inspiration:</strong> Inspired by the COVID-19 pandemic to help students access
-                                labs closer to them when their colleges were far.</p>
-                            <p><strong>Tech Stack:</strong> Node.js, Express.js, React.js, MongoDB, JavaScript</p>
-                            <a href="https://github.com/usernamenah/AdaanPradaan_FrontEnd" target="_blank">GitHub Link</a>
+                        <div class="card-chat project-card">
+                            <h3>Fruit Business Website - Full Stack Development</h3>
+                            <p>Built a highly interactive and visually appealing web platform for selling fresh fruits, exotic juices, and premium fruit boxes. Integrated advanced OAuth 2.0 secure authentication with Firebase Auth and developed a smart AI assistant for personalized suggestions and support. Implemented dynamic product catalogs, responsive layouts, and optimized backend APIs.</p>
+                            <p><strong>Tech Stack:</strong> React.js, Node.js, Express.js, MongoDB, Firebase Auth, OAuth 2.0, AI Integration</p>
+                            <!-- <a href="LINK_TO_FRUIT_BUSINESS_PROJECT_OR_GITHUB" target="_blank" class="project-link">View Project</a> -->
                         </div>
-                        <div class="card-chat">
-                            <h3>Portfolio Website</h3>
-                            <p><strong>Description:</strong> A personal portfolio showcasing basic information about me.
-                            </p>
-                            <p><strong>Tech Stack:</strong> Angular, TypeScript</p>
-                            <a href="https://github.com/usernamenah/sujith_portfolio" target="_blank">GitHub Link</a>
+                        <div class="card-chat project-card">
+                            <h3>Portfolio Website - Frontend and Backend Development</h3>
+                            <p>Designed a sleek, fully responsive personal portfolio website. Integrated smooth animations and micro-interactions using Angular. Engineered reusable components and modular architecture.</p>
+                            <p><strong>Tech Stack:</strong> Angular, TypeScript, Angular Animations, CSS3, HTML5</p>
+                            <a href="https://github.com/usernamenah/sujith_portfolio" target="_blank" class="project-link">GitHub Link</a>
                         </div>
-                        <div class="card-chat">
-                            <h3>Chat Application</h3>
-                            <p><strong>Description:</strong> Implemented a chat application using computer network
-                                concepts like selective repeat.</p>
+                        <div class="card-chat project-card">
+                            <h3>Chat Application - Java Networking</h3>
+                            <p>Created a network-based chat system using selective repeat mechanism for reliable data transmission.</p>
                             <p><strong>Tech Stack:</strong> Java (Web Sockets, Threads)</p>
-                            <a href="https://github.com/usernamenah/ComputerNetwork" target="_blank">GitHub Link</a>
+                            <a href="https://github.com/usernamenah/ComputerNetwork" target="_blank" class="project-link">GitHub Link</a>
                         </div>
-                        <div class="card-chat">
-                            <h3>Linux-Based Penetration Testing Project</h3>
-                            <p><strong>Description:</strong> Performed penetration testing on network systems using
-                                tools available on Kali Linux.</p>
-                            <p><strong>Automation:</strong> Automated vulnerability scanning processes with Bash scripts
-                                to streamline testing workflows.</p>
-                            <p><strong>Tech Stack:</strong> Kali Linux, Bash Scripting, Nmap, Metasploit, Wireshark</p>
-                            <a href="https://github.com/usernamenah/EthicalHacking-p1" target="_blank">GitHub Link</a>
+                        <div class="card-chat project-card">
+                            <h3>Linux-Based Penetration Testing - Kali Linux Project</h3>
+                            <p>Performed penetration testing using Kali Linux tools. Automated vulnerability scans with Bash scripts to streamline testing workflows.</p>
+                            <p><strong>Tech Stack:</strong> Kali Linux, Bash, Nmap, Metasploit, Wireshark</p>
+                            <a href="https://github.com/usernamenah/EthicalHacking-p1" target="_blank" class="project-link">GitHub Link</a>
                         </div>
                     </section>
 
-                    <section id="skills-chat">
-                        <div class="slow-glow-divs">
+                    <section id="skills-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
                             <h2>Skills</h2>
                         </div>
-                        <ul>
-                            <li><strong>Programming Languages:</strong> Python, Java, C++, JavaScript</li>
-                            <li><strong>Technologies and Tools:</strong> Node.js, React.js, Angular, MongoDB, Git,
-                                Docker, SQL, Machine Learning, Deep Learning, Cloud Computing</li>
-                            <li><strong>Core Skills:</strong> Security Penetration Testing, Data Security, Application
-                                Security, Risk Management, Performance Management, Team and People Management,
-                                Collaboration, Problem Solving, Technical Problem Solving, Workflow Optimization</li>
-                        </ul>
+                        <div class="card-chat">
+                            <p><strong>Programming Languages:</strong> Python, Java, C++, JavaScript</p>
+                            <p><strong>Technologies and Tools:</strong> Node.js, React.js, Angular, MongoDB, Git, Docker, SQL, Machine Learning, Deep Learning, Cloud Computing</p>
+                            <p><strong>Core Skills:</strong> Penetration Testing, Application Security, Risk Management, Workflow Optimization, Collaboration, Problem Solving</p>
+                        </div>
                     </section>
 
-                    <section id="interests-chat">
-                        <div class="slow-glow-divs">
+                    <section id="interests-chat" class="portfolio-section animate-on-scroll">
+                        <div class="section-title">
                             <h2>Extracurricular Activities & Interests</h2>
                         </div>
-                        <ul>
-                            <li>Volleyball: 5 years of experience, actively participating in tournaments.</li>
-                            <li>Chess: Elo rating of 1000+, actively competing and improving strategic thinking.</li>
-                            <li>Content Creation: Run a social media platform focused on creating educational content
-                                about history.</li>
-                            <li>Music: Play tabla and electric drums, with a passion for rhythm and music production.
-                            </li>
-                            <li>Debating: Participate in global debates and write articles on topics discussed in
-                                debates.</li>
-                        </ul>
+                        <div class="card-chat">
+                            <ul>
+                                <li><strong>Sports:</strong> Actively engage in volleyball (5 years, tournaments) and chess (Elo 1000+).</li>
+                                <li><strong>Content Creation:</strong> Run a social media platform on history.</li>
+                                <li><strong>Music:</strong> Play tabla and electric drums.</li>
+                                <li><strong>Debating:</strong> Participate in global debates and write articles.</li>
+                                <li><strong>Community & Networking:</strong> Mentor in a learning community, maintain a broad international network, and regularly participate in conferences on science, history, and philosophy.</li>
+                            </ul>
+                        </div>
                     </section>
                 </div>
 
-
-                <!-- <footer id="footer-chat">
-                    <p>Contact: <a href="mailto:sujithpappala777@gmail.com">sujithpappala777&#64;gmail.com</a> | Phone:
-                        +91-720-731-2164</p>
-                    <p><a href="https://linkedin.com/in/sujith-pappala-634529225/" target="_blank">LinkedIn</a> | <a
-                            href="https://github.com/usernamenah" target="_blank">GitHub</a> | <a
-                            href="https://sujith-portfolio-ten.vercel.app/" target="_blank">Website</a></p>
-                </footer> -->
-
-
-
+                <footer id="footer-chat">
+                    <p>© <span id="currentYear"></span> Pappala Sujith. All rights reserved.</p>
+                    <p>
+                        Contact: <a href="mailto:sujithpappala777@gmail.com">sujithpappala777@gmail.com</a> | Phone: +91-720-731-2164
+                    </p>
+                </footer>
             </div>
         </div>
     </div>
 
+    <!-- Circle transition elements (if your JS handles them) -->
+    <div class="circleforcover" (click)="justExpand()"></div>
+    <div class="circleforcovermover" *ngIf="isDiv2Visible"></div>
+
+    <script>
+        // Simple script to set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Basic placeholder for your Angular logic to switch views
+        // You'll replace this with your actual Angular component logic
+        const loginButton = document.getElementById('mainloginbutton');
+        const initialFormContainer = document.getElementById('initial-form-container');
+        const portfolioSection = document.getElementById('portfolio-section');
+        const loadingWrapper = document.getElementById('loading-wrapper');
+        const pageContent = document.getElementById('page-content');
+
+
+        // Simulate loading
+        let percentage = 0;
+        const percentageElement = document.getElementById('loading-percentage');
+        if (percentageElement) {
+            const interval = setInterval(() => {
+                percentage += 1;
+                // {{percentagecount}} is Angular, so this is just a visual sim
+                percentageElement.textContent = percentage + '%'; 
+                if (percentage >= 100) {
+                    clearInterval(interval);
+                    loadingWrapper.classList.remove('loading-active');
+                    loadingWrapper.classList.add('hidden');
+                    pageContent.classList.remove('hidden');
+                    initialFormContainer.classList.add('active'); // Show form first
+                    // Add 'loaded' class to body or a container if needed for entry animations
+                    document.body.classList.add('page-loaded');
+                }
+            }, 30); // Adjust speed of loading
+        } else { // If no loading screen, just show content
+            loadingWrapper.classList.remove('loading-active');
+            loadingWrapper.classList.add('hidden');
+            pageContent.classList.remove('hidden');
+            initialFormContainer.classList.add('active');
+            document.body.classList.add('page-loaded');
+        }
+
+
+        if (loginButton && initialFormContainer && portfolioSection) {
+            loginButton.addEventListener('click', () => {
+                // This is a simplified toggle. Your Angular logic (toggleDiv) will be more robust.
+                initialFormContainer.classList.remove('active');
+                initialFormContainer.classList.add('hidden'); // hide form
+                portfolioSection.classList.remove('hidden');
+                portfolioSection.classList.add('active'); // show portfolio
+                // Trigger scroll animations check after content is shown
+                checkScrollAnimations();
+            });
+        }
+
+        // Simple scroll animation trigger
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        function checkScrollAnimations() {
+            const triggerBottom = window.innerHeight / 5 * 4;
+            animatedElements.forEach(element => {
+                const boxTop = element.getBoundingClientRect().top;
+                if(boxTop < triggerBottom) {
+                    element.classList.add('visible');
+                } else {
+                   // Optional: remove 'visible' if you want animation to replay on scroll up
+                   // element.classList.remove('visible');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkScrollAnimations);
+        // Initial check in case elements are already in view
+        checkScrollAnimations();
+
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
 </body>
-
-
 </html>
